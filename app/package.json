@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode=development --devtool=source-map",
-    "build": "webpack --mode=production"
+    "build": "BUILD_PATH='./dist/app' webpack --mode=production"
   },
   "author": "",
   "license": "MIT",

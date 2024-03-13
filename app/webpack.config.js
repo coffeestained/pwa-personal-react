@@ -1,7 +1,8 @@
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const path = require("path");
 
-module.exports = options => {
+module.exports = (_) => {
   return {
     entry: './index.js',
     output: {
@@ -45,7 +46,7 @@ module.exports = options => {
         })
     ],
     devServer: {
-      port: 4204
+      port: 4202
     }
   }
 }
