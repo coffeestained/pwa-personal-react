@@ -17,14 +17,12 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
 nvm i 20
 
-# NG
-npm install -g @angular/cli@16
 
 # Config and build
 sudo mkdir /etc/nginx/sites-available
 sudo mkdir /etc/nginx/sites-enabled
-sudo bash -c 'cat bin/assets/nginx.conf > /etc/nginx/sites-available/pwa-personal-angular'
-sudo ln -s /etc/nginx/sites-available/pwa-personal-angular /etc/nginx/sites-enabled/pwa-personal-angular 
-(cd app && nvm use 20 && npm ci && ng build)
+sudo bash -c 'cat bin/assets/nginx.conf > /etc/nginx/sites-available/pwa-personal-react'
+sudo ln -s /etc/nginx/sites-available/pwa-personal-react /etc/nginx/sites-enabled/pwa-personal-react 
+(cd app && nvm use 20 && npm ci && npm run build)
 sudo systemctl reload nginx
 sudo service nginx restart
