@@ -1,8 +1,7 @@
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const path = require("path");
 
-module.exports = (_) => {
+module.exports = options => {
   return {
     entry: './index.js',
     output: {
@@ -29,11 +28,13 @@ module.exports = (_) => {
     },
     plugins: [
       new ModuleFederationPlugin({
-          name: "Tools",
+        
+          // For remotes (please adjust)
+          name: "react",
           library: { type: "var", name: "react" },
           filename: "remoteEntry.js", // <-- Meta Data
           exposes: {
-              './Tools': './app.js',
+              './web-components': './app.js',
           },        
           shared: ["react", "react-dom"]
         }),
@@ -46,7 +47,7 @@ module.exports = (_) => {
         })
     ],
     devServer: {
-      port: 4202
+      port: 4204
     }
   }
 }
