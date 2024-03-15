@@ -1,13 +1,14 @@
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-module.exports = options => {
+module.exports = (_) => {
   return {
     entry: './index.js',
     output: {
       filename: 'bundle.js',
       publicPath: "auto",
-      uniqueName: "mfe4"
+      uniqueName: "mfe4",
+      scriptType:"text/javascript"
     },
     module: {
       rules: [
@@ -28,11 +29,8 @@ module.exports = options => {
     },
     plugins: [
       new ModuleFederationPlugin({
-        
-          // For remotes (please adjust)
           name: "react",
-          library: { type: "var", name: "react" },
-          filename: "remoteEntry.js", // <-- Meta Data
+          filename: "remoteEntry.js", 
           exposes: {
               './web-components': './app.js',
           },        
