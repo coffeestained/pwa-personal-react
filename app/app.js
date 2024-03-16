@@ -1,22 +1,34 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React, { Fragment } from "react";
+import ReactDOM from 'react-dom';
+
+import Root from "./features/layout/root/root";
 
 class App extends React.Component {
 
   render() {
-    const reactVersion = require('./package.json').dependencies['react'];
-
-    return ([
-        <h1>
-          React
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" height="30"></img>
-        </h1>,
-        <p>
-          React Version: {reactVersion}
-        </p>
-    ])
+    return (
+      <Root></Root>
+    )
   }
 }
+
+const Home = () => (
+  <Fragment>
+    <h1>Home</h1>
+  </Fragment>
+  );
+
+const About = () => (
+  <Fragment>
+    <h1>About</h1>
+  </Fragment>
+  );
+
+const Contact = () => (
+  <Fragment>
+    <h1>Contact</h1>
+  </Fragment>
+  );
 
 class Mfe4Element extends HTMLElement {
   connectedCallback() {
