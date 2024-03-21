@@ -1,16 +1,25 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navigation from '../navigation/navigation';
+import React, { useState } from "react";
+import { useLocation, Route, Routes } from "react-router-dom";
+
+import { Navigation } from '../navigation/navigation';
+import { routes } from "../../../app-routing";
 
 import './root.css';
-export default Root = () => (
-    <Router>
-        <main class="tools__root">
+export const Root = () => {
+    const location = useLocation();
+    const [displayLocation, setDisplayLocation] = useState(location);
+    // TODO Route animation
+    console.log(location, displayLocation);
+    return ( 
+        <main className="tools__root">
             <Navigation></Navigation>
             <Routes>
-                <Route path="/tools" element={<Home />} />
-                <Route path="/tools/about" element={<About />} />
-                <Route path="/tools/contact" element={<Contact />} />
+                {
+                    Object.keys(routes).map((route) => (
+                        <Route path={route} element={routes[route].component()} />
+                    ))
+                }
             </Routes>
         </main>
-    </Router>
-);
+    )
+};

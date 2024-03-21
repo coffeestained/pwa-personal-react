@@ -1,3 +1,47 @@
-.tools__navigation {
-    display: flex;
+@keyframes blinking {
+    50% {
+      opacity: 0;
+    }
 }
+
+.tools__navigation {
+    background: var(--theme-background-color-two);
+
+    a {
+        font-size: 12px;
+    }
+    
+    a:hover {
+        text-decoration: none;
+    }
+
+    li { 
+        display: flex;
+        align-items: center;
+    }
+
+    .navigation__terminal {
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+
+        * {
+            margin-right: 5px;
+        }
+
+        .terminal__one {
+            display: flex;
+            flex-wrap: nowrap;
+            color: var(--theme-text-color);
+        }
+
+        .terminal__two {
+            color: var(--theme-text-color-two);
+        }
+
+        .terminal__blinking {
+            animation: blinking 1.5s step-start infinite;
+        }
+    }
+}
+

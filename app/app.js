@@ -1,39 +1,25 @@
-import React, { Fragment } from "react";
+import React from "react";
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from "react-router-dom";
 
-import Root from "./features/layout/root/root";
+import { Root } from "./features/layout/root/root";
 
+import './app.css';
+import './output.css';
 class App extends React.Component {
-
   render() {
     return (
-      <Root></Root>
+      <Router>
+        <Root></Root>
+      </Router>
     )
   }
 }
 
-const Home = () => (
-  <Fragment>
-    <h1>Home</h1>
-  </Fragment>
-  );
-
-const About = () => (
-  <Fragment>
-    <h1>About</h1>
-  </Fragment>
-  );
-
-const Contact = () => (
-  <Fragment>
-    <h1>Contact</h1>
-  </Fragment>
-  );
-
-class Mfe4Element extends HTMLElement {
+class ToolsElement extends HTMLElement {
   connectedCallback() {
     ReactDOM.render(<App/>, this);
   }
 }
 
-customElements.define('react-element', Mfe4Element);
+customElements.define('react-element', ToolsElement);
