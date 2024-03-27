@@ -2221,6 +2221,11 @@ video {
   line-height: 2.25rem;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -2710,6 +2715,12 @@ video {
 
 .\[hash\:base64\] {
   hash: base64;
+}
+
+react-element {
+  display: flex;
+  position: absolute;
+  inset: 0;
 }
 
 @media (min-width: 640px) {

@@ -1,0 +1,60 @@
+{
+    "flags": {
+      "i": "Case insensitive matching",
+      "g": "Global search",
+      "m": "Multiline matching",
+      "s": "Allows . to match newline characters",
+      "u": "Unicode mode, treating pattern as a sequence of Unicode code points",
+      "y": "Sticky matching, match starting at the current position in the target string"
+    },
+    "quantifiers": {
+      "?": "Zero or one occurrence",
+      "+": "One or more occurrences",
+      "*": "Zero or more occurrences",
+      "{n}": "Exactly n occurrences",
+      "{n,}": "n or more occurrences",
+      "{n,m}": "Between n and m occurrences"
+    },
+    "specialCharacters": {
+      ".": "Any character except newline or other Unicode line terminator (unless the s flag is set)",
+      "[ ]": "Character class, match any one of the enclosed characters",
+      "( )": "Capture group, groups multiple tokens together and captures them for backreferencing",
+      "|": "Alternation, matches either the pattern to the left or the right",
+      "\\": "Escape character, used to escape special characters",
+      "^": "Start of input or start of line in multiline mode",
+      "$": "End of input or end of line in multiline mode",
+      "?": "Quantifier, making the preceding element optional, also used in lookahead and non-capturing groups",
+      "*": "Quantifier, match zero or more occurrences",
+      "+": "Quantifier, match one or more occurrences",
+      "{ }": "Quantifier, specifies a custom number of occurrences"
+    },
+    "characterClasses": {
+      "\\d": "Digit, matches any Arabic numeral digit",
+      "\\D": "Non-digit, matches any character that is not a digit",
+      "\\w": "Word, matches any alphanumeric character including underscore",
+      "\\W": "Non-word, matches any character that is not a word character",
+      "\\s": "Whitespace, matches any space, tab, newline, and similar whitespace characters",
+      "\\S": "Non-whitespace, matches any character that is not a whitespace",
+      ".": "Matches any character except for newline or other Unicode line terminator (unless the s flag is set)"
+    },
+    "boundaries": {
+      "^": "Matches the beginning of the input or the beginning of a line if the multiline flag is set",
+      "$": "Matches the end of the input or the end of a line if the multiline flag is set",
+      "\\b": "Word boundary, matches a position where a word character is followed by a non-word character, or vice versa",
+      "\\B": "Non-word boundary, matches a position where either both sides are word characters or both are non-word characters"
+    },
+    "groupsAndRanges": {
+      "(xyz)": "Capturing group, matches xyz and remembers the match",
+      "(?:xyz)": "Non-capturing group, matches xyz without remembering the match",
+      "[xyz]": "Character class, matches any one of the enclosed characters",
+      "[^xyz]": "Negated character class, matches anything not enclosed in the brackets",
+      "[a-z]": "Range, matches any character from a to z",
+      "[^a-z]": "Negated range, matches any character not from a to z"
+    },
+    "lookaroundAssertions": {
+      "(?=xyz)": "Positive lookahead, asserts that xyz follows the current position, without including it in the match",
+      "(?!xyz)": "Negative lookahead, asserts that xyz does not follow the current position",
+      "(?<=xyz)": "Positive lookbehind, asserts that xyz precedes the current position, without including it in the match",
+      "(?<!xyz)": "Negative lookbehind, asserts that xyz does not precede the current position"
+    }
+  }

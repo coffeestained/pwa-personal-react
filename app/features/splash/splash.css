@@ -1,4 +1,17 @@
 .splash__container {
-    margin-top: 15vh;
-    margin-left: 150px;
+
+}
+
+.splash__designer-square {
+    width: 19rem;
+    line-height: 2px;
+    letter-spacing: 4px;
+    text-align: justify;
+}
+
+.splash__designer-square::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
 }

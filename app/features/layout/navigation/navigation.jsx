@@ -21,7 +21,7 @@ export const Navigation = () => (
                 </li>
                 {
                   Object.keys(routes).map((route) => (
-                    <li aria-current="page">
+                    <li aria-current="page" key={route}>
                       <Link className="no-underline" to={route}>{routes[route].name}</Link>
                     </li>
                   ))

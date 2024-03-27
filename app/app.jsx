@@ -1,6 +1,7 @@
 import React from "react";
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router } from "react-router-dom";
+import { GlobalProvider } from "./contexts/GlobalContext";
 
 import { Root } from "./features/layout/root/root";
 
@@ -9,8 +10,10 @@ import './output.css';
 class App extends React.Component {
   render() {
     return (
-      <Router>
-        <Root></Root>
+      <Router>        
+        <GlobalProvider>
+          <Root></Root>
+        </GlobalProvider>
       </Router>
     )
   }
@@ -18,7 +21,12 @@ class App extends React.Component {
 
 class ToolsElement extends HTMLElement {
   connectedCallback() {
-    ReactDOM.render(<App/>, this);
+    const root = ReactDOM.createRoot(document.getElementsByTagName("react-element")[0]);
+    root.render(
+      <React.StrictMode>
+          <App/>
+      </React.StrictMode>
+    );
   }
 }
 

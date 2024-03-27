@@ -2,7 +2,9 @@ import React, { Fragment } from "react";
 
 export const ColorConverter = () => (
     <Fragment>
-        <h1>ColorConverter</h1>
+        <div className="color-converter__container">
+            Color Converter
+        </div>
     </Fragment>
 );
   
