@@ -36,10 +36,10 @@ module.exports = (_) => {
     },
     plugins: [
       new ModuleFederationPlugin({
-          name: "react",
+          name: "reactApp",
           filename: "remoteEntry.js", 
           exposes: {
-              './web-components': './app.jsx',
+              './BuilderModule': './app.jsx',
           },        
           shared: ["react", "react-dom"]
         }),
