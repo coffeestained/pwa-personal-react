@@ -21,13 +21,13 @@ class App extends React.Component {
 
 class ToolsElement extends HTMLElement {
   connectedCallback() {
-    const root = ReactDOM.createRoot(document.getElementsByTagName("react-element")[0]);
+    const root = ReactDOM.createRoot(this);
     root.render(
       <React.StrictMode>
-          <App/>
+        <App />
       </React.StrictMode>
     );
   }
 }
 
-customElements.define('react-element', ToolsElement);
+customElements.define('tools-element', ToolsElement);
